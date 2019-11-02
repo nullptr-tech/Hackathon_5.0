@@ -27,6 +27,7 @@ import android.widget.Spinner;
 public class CreateMeeting extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private Button btn;
     private ExpandableListView lvCategory;
+    private EditText priceInput;
 
     private ArrayList<DataItem> arCategory;
     private ArrayList<SubCategoryItem> arSubCategory;
@@ -61,9 +62,10 @@ public class CreateMeeting extends AppCompatActivity implements AdapterView.OnIt
 
         Intent iin = getIntent();
         Bundle b = iin.getExtras();
+        priceInput = (EditText) findViewById(R.id.priceInput);
 
         // Spinner element
-        Spinner spinner = (Spinner) findViewById(R.id.roomSpin);
+       // Spinner spinner = (Spinner) findViewById(R.id.roomSpin);
 
 
         // Spinner Drop down elements
@@ -82,9 +84,9 @@ public class CreateMeeting extends AppCompatActivity implements AdapterView.OnIt
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // attaching data adapter to spinner
-        spinner.setAdapter(dataAdapter);
+        //spinner.setAdapter(dataAdapter);
 
-        spinner.setOnItemSelectedListener(this);
+        //spinner.setOnItemSelectedListener(this);
         if(b!=null)
         {
             selectedUsers =(ArrayList<String>) b.get("selectedUsers");
@@ -94,12 +96,16 @@ public class CreateMeeting extends AppCompatActivity implements AdapterView.OnIt
 
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                int price = Integer.parseInt(priceInput.getText().toString().trim());
+                Log.d("poop", Integer.toString(price));
                 String key = mDatabase.child("meetings").push().getKey();
                 mDatabase.child("meetings").child(key).child("pending").setValue("pending...");
                 mDatabase.child("meetings").child(key).child("title").setValue(title.getText().toString());
                 mDatabase.child("meetings").child(key).child("desc").setValue(description.getText().toString());
                 mDatabase.child("meetings").child(key).child("participants").setValue(selectedUsers);
-                mDatabase.child("meetings").child(key).child("meetingRoom").setValue(meetingRoom);
+                mDatabase.child("meetings").child(key).child("meetingRoom").setValue("null");
+                mDatabase.child("meetings").child(key).child("price").setValue(price);
                 List<List<String>> dayList = new ArrayList<List<String>>();
                 for (int day = 0; day < childItems.size(); day++){
                     List<String> timeList = new ArrayList<String>();
