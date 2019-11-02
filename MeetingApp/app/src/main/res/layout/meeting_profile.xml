@@ -36,7 +36,7 @@
         android:layout_marginBottom="26dp"
         android:layout_toEndOf="@+id/img_avatar_final"
         android:layout_toRightOf="@+id/img_avatar_final"
-        android:textColor="@color/greyblue"
+        android:textColor="@color/slate_blue"
         android:textSize="8sp"
         tools:text="Marcelino" />
 

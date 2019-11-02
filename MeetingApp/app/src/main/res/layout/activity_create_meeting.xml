@@ -84,7 +84,7 @@
             android:layout_marginTop="201dp"
             android:layout_marginEnd="11dp"
             android:layout_marginBottom="136dp"
-            android:childDivider="@color/colorBlack"
+            android:childDivider="@color/black"
             android:divider="@null"
             android:dividerHeight="0dp" />
 
