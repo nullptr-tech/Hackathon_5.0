@@ -7,8 +7,9 @@
 
     <TextView
         android:id="@+id/userInfo"
-        android:textSize="25sp"
-        android:textStyle="bold"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@color/dim_gray"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 </android.support.constraint.ConstraintLayout>
