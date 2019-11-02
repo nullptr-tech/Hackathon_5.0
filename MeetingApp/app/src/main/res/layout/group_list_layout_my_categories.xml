@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dim_gray"
-    android:descendantFocusability="beforeDescendants"
-    android:orientation="vertical">
+    android:descendantFocusability="beforeDescendants">
 
     <View
         android:layout_width="match_parent"
@@ -13,8 +12,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/background_bordered_theme"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@drawable/background_bordered_theme">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -26,7 +25,7 @@
                 android:id="@+id/ivCategory"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:visibility="gone" />
+                android:visibility="gone"/>
         </LinearLayout>
 
         <LinearLayout
@@ -38,9 +37,9 @@
                 android:id="@+id/tvMainCategoryName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical|left"
                 android:minHeight="50dp"
-                android:textColor="@color/black" />
+                android:gravity="center_vertical|left"
+                android:textColor="@color/black"/>
         </LinearLayout>
 
         <LinearLayout
@@ -53,8 +52,8 @@
                 android:id="@+id/cbMainCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/custom_checkbox_theme"
-                android:focusable="false" />
+                android:focusable="false"
+                android:button="@drawable/custom_checkbox_theme" />
 
         </LinearLayout>
     </LinearLayout>
