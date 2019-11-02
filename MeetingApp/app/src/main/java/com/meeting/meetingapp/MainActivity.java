@@ -24,6 +24,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+
+import com.google.gson.internal.bind.ObjectTypeAdapter;
 import com.meeting.meetingapp.adapter.UsersChatAdapter;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -55,7 +57,7 @@ public class MainActivity extends AppCompatActivity{
     Meeting meeting;
     Button createMeeting;
     ArrayList<String> listOfKeys;
-
+    Object checkForParentChild;
     @Override
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
@@ -83,6 +85,7 @@ public class MainActivity extends AppCompatActivity{
                 for (DataSnapshot ds : dataSnapshot.child("meetings").getChildren()) {
                     meeting = ds.getValue(Meeting.class);
                     Object timesObject = ds.child("times").getValue();
+
                     boolean earlyTimeFound = false;
                     boolean lateTimeFound = false;
                     String earlyTime = "";
@@ -208,6 +211,9 @@ public class MainActivity extends AppCompatActivity{
 
                     }
                 }
+                for (DataSnapshot ds : dataSnapshot.child("users").getChildren()){
+                    checkForParentChild = ds.child("parentOrChild").getValue().toString();
+                }
                 listView.setAdapter(adapter);
             }
 
@@ -225,6 +231,12 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+        if(checkForParentChild == "false"){
+            createMeeting.setVisibility(View.INVISIBLE);
+        }
+        else {
+            createMeeting.setVisibility(View.VISIBLE);
+        }
         createMeeting.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
