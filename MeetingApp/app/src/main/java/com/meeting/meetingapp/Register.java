@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,8 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     EditText email,password,name;
     Button register;
     TextView loginbck;
+    Switch isParentOrChild;
+    Boolean IsParentOrChild;
     String Name,Email,Password;
     FirebaseAuth mAuth;
     ProgressDialog mDialog;
@@ -45,6 +48,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         name = (EditText)findViewById(R.id.regname);
         register = (Button)findViewById(R.id.regHere);
         loginbck = (TextView)findViewById(R.id.backToLogin);
+        isParentOrChild = (Switch)findViewById(R.id.isParentOrChild);
+
+
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
@@ -66,6 +72,14 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private void Signup() {
         Name = name.getText().toString().trim();
         Email = email.getText().toString().trim();
+        boolean parentOrChildStatus;
+
+        if (isParentOrChild.isChecked())
+            parentOrChildStatus = true;
+        else
+            parentOrChildStatus = false;
+
+        IsParentOrChild = parentOrChildStatus;
         Password = password.getText().toString().trim();
 
         if (TextUtils.isEmpty(Name)){
@@ -137,7 +151,8 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                 getUserEmail(),
                 UsersChatAdapter.ONLINE,
                 ChatHelper.generateRandomAvatarForUser(),
-                new Date().getTime()
+                new Date().getTime(),
+                getParentOrChild()
         );
     }
     public String getDisplayName() {
@@ -146,5 +161,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
     public String getUserEmail() {
         return Email;
+    }
+
+    public boolean getParentOrChild(){
+        return IsParentOrChild;
     }
 }

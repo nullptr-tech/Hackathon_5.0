@@ -62,6 +62,19 @@
         android:ems="10"
         android:inputType="textPassword" />
 
+    <Switch
+        android:id="@+id/isParentOrChild"
+        android:hint="Password"
+        android:padding="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="30dp"
+        android:layout_width="365dp"
+        android:background="@drawable/background"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:text="Are you a parent?" />
+
     <Button
         android:id="@+id/regHere"
         style="@style/FirebaseUI.Button"

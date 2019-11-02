@@ -11,18 +11,20 @@ public class User {
     private String connection;
     private int avatarId;
     private long createdAt;
+    private boolean isParentOrChild = false;
 
     private String mRecipientId;
 
     public User() {
     }
 
-    public User(String displayName, String email, String connection, int avatarId, long createdAt) {
+    public User(String displayName, String email, String connection, int avatarId, long createdAt, boolean isParentOrChild) {
         this.displayName = displayName;
         this.email = email;
         this.connection = connection;
         this.avatarId = avatarId;
         this.createdAt = createdAt;
+        this.isParentOrChild = isParentOrChild;
     }
 
 
@@ -53,6 +55,10 @@ public class User {
 
     public String getDisplayName() {
         return displayName;
+    }
+
+    public boolean getParentOrChild() {
+        return isParentOrChild;
     }
 
     public String getEmail() {
