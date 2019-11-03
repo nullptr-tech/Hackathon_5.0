@@ -36,7 +36,7 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/card_balance"
         android:layout_width="91dp"
         android:layout_height="33dp"
         android:layout_marginStart="8dp"
@@ -65,7 +65,7 @@
         android:textColor="#fff"
         android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="@+id/card_balance"
         app:layout_constraintHorizontal_bias="0.721"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
