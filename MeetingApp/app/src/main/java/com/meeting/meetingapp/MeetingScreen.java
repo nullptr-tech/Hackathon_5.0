@@ -357,6 +357,7 @@ public class MeetingScreen extends MainActivity{
             logout();
             return true;
         }
+
         else if (item.getItemId()==R.id.setExclusion){
             Intent intent = new Intent(MeetingScreen.this, SetPrefDates.class);
             startActivity(intent);

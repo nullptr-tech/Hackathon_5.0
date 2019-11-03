@@ -9,8 +9,16 @@
         android:title="Set Prefered Dates"/>
 
     <item
+        android:id="@+id/action_buy"
+        android:orderInCategory="100"
+        android:title="Buy"/>
+
+
+    <item
         android:id="@+id/action_logout"
         android:orderInCategory="100"
         android:title="Logout"/>
+
+
 
 </menu>
