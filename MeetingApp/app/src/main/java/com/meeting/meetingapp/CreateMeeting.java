@@ -48,6 +48,9 @@ public class CreateMeeting extends AppCompatActivity implements AdapterView.OnIt
     Button next;
     EditText title, description;
 
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference mDatabase = database.getReference();
+
     String meetingRoom;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +60,7 @@ public class CreateMeeting extends AppCompatActivity implements AdapterView.OnIt
         title = (EditText)findViewById(R.id.update_title_name);
         description = (EditText)findViewById(R.id.update_desc_title);
         next = (Button)findViewById(R.id.nextPage);
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference mDatabase = database.getReference();
+
 
         Intent iin = getIntent();
         Bundle b = iin.getExtras();

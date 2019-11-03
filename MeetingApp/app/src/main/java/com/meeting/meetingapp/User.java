@@ -12,6 +12,8 @@ public class User {
     private int avatarId;
     private long createdAt;
     private boolean parentOrChild;
+    private boolean isParentOrChild = false;
+    public double startingBalance;
 
     private String mRecipientId;
 
@@ -19,12 +21,15 @@ public class User {
     }
 
     public User(String displayName, String email, String connection, int avatarId, long createdAt, boolean parentOrChild) {
+    public User(String displayName, String email, String connection, int avatarId, long createdAt, boolean isParentOrChild,  double startingBalance) {
         this.displayName = displayName;
         this.email = email;
         this.connection = connection;
         this.avatarId = avatarId;
         this.createdAt = createdAt;
         this.parentOrChild = parentOrChild;
+        this.isParentOrChild = isParentOrChild;
+        this.startingBalance = startingBalance;
     }
 
 
@@ -79,5 +84,9 @@ public class User {
 
     public void setRecipientId(String recipientId) {
         this.mRecipientId = recipientId;
+    }
+
+    public double getStartingBalance() {
+        return startingBalance;
     }
 }
