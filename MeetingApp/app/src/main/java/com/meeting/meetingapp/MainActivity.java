@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity{
     ArrayList<String> list;
     ArrayAdapter<String> adapter;
     Meeting meeting;
-    Button createMeeting, graphB;
+    Button createMeeting;
     ArrayList<String> listOfKeys;
     String checkForParentChild;
     @Override
@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity{
         meeting = new Meeting();
 
         createMeeting = (Button) findViewById(R.id.create_Meeting);
-        graphB = (Button) findViewById(R.id.graphButton);
         listView = (ListView) findViewById(R.id.listView);
 
         toolbar = (Toolbar)findViewById(R.id.toolbar1);
@@ -221,11 +220,9 @@ public class MainActivity extends AppCompatActivity{
                 }
                 if(checkForParentChild.equals("false")){
                     createMeeting.setVisibility(View.INVISIBLE);
-                    graphB.setVisibility(View.INVISIBLE);
                 }
                 else {
                     createMeeting.setVisibility(View.VISIBLE);
-                    graphB.setVisibility(View.VISIBLE);
                 }
 
                 listView.setAdapter(adapter);
@@ -250,15 +247,6 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View v){
                 if (v == createMeeting){
                     Intent intent = new Intent(MainActivity.this, SelectParticipants.class);
-                    startActivity(intent);
-                }
-            }
-        });
-        graphB.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                if (v == graphB){
-                    Intent intent = new Intent(MainActivity.this, GraphTest.class);
                     startActivity(intent);
                 }
             }

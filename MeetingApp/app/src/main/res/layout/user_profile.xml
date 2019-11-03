@@ -40,25 +40,17 @@
 
     <CheckBox
         android:id="@+id/checkBox2"
-        android:onClick="onCheckboxClicked"
-        android:layout_width="wrap_content"
+        android:layout_width="35dp"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/img_avatar_final"
+        android:layout_alignTop="@+id/img_avatar_final"
         android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="201dp"
-        android:layout_marginEnd="79dp"
-        android:text="CheckBox" /><![CDATA[
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="103dp"
+        android:onClick="onCheckboxClicked"
+        android:paddingStart="16dp"
+        android:paddingLeft="16dp"
+        android:paddingEnd="16dp"
+        android:paddingRight="16dp"
+        android:text="" />
 
-
-
-
-
-
-
-    />
-
-
-
-]]>
 </RelativeLayout>

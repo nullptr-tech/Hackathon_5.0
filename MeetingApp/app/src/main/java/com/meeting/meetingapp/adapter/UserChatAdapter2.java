@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.meeting.meetingapp.ChatHelper.ChatHelper;
 import com.meeting.meetingapp.ChatHelper.ExtraIntent;
 import com.meeting.meetingapp.CheckConflicts;
+import com.meeting.meetingapp.GraphTest;
 import com.meeting.meetingapp.MainActivity;
 import com.meeting.meetingapp.R;
 import com.meeting.meetingapp.User;
@@ -131,14 +132,8 @@ public class UserChatAdapter2 extends RecyclerView.Adapter<UserChatAdapter2.View
         @Override
         public void onClick(View view) {
 
-            User user = mUsers.get(getLayoutPosition());
+            Intent chatIntent = new Intent(mContextViewHolder, GraphTest.class);
 
-            String chatRef = user.createUniqueChatRef(mCurrentUserCreatedAt,mCurrentUserEmail);
-
-            Intent chatIntent = new Intent(mContextViewHolder, MainActivity.class);
-            chatIntent.putExtra(ExtraIntent.EXTRA_CURRENT_USER_ID, mCurrentUserId);
-            chatIntent.putExtra(ExtraIntent.EXTRA_RECIPIENT_ID, user.getRecipientId());
-            chatIntent.putExtra(ExtraIntent.EXTRA_CHAT_REF, chatRef);
 
             // Start new activity
             mContextViewHolder.startActivity(chatIntent);

@@ -31,7 +31,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     EditText email,password,name;
     Button register;
     TextView loginbck;
-    Switch isParentOrChild;
+    Switch isParentOrChildTest;
     Boolean IsParentOrChild;
     String Name,Email,Password;
     FirebaseAuth mAuth;
@@ -48,7 +48,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         name = (EditText)findViewById(R.id.regname);
         register = (Button)findViewById(R.id.regHere);
         loginbck = (TextView)findViewById(R.id.backToLogin);
-        isParentOrChild = (Switch)findViewById(R.id.isParentOrChild);
+        isParentOrChildTest = (Switch)findViewById(R.id.isParentOrChild);
 
 
 
@@ -74,7 +74,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         Email = email.getText().toString().trim();
         boolean parentOrChildStatus;
 
-        if (isParentOrChild.isChecked())
+        if (isParentOrChildTest.isChecked())
             parentOrChildStatus = true;
         else
             parentOrChildStatus = false;

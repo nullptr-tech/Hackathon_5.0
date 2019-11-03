@@ -9,16 +9,20 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.meeting.meetingapp.ChatHelper.ChatHelper;
 import com.meeting.meetingapp.ChatHelper.ExtraIntent;
 import com.meeting.meetingapp.CheckConflicts;
+import com.meeting.meetingapp.GraphTest;
 import com.meeting.meetingapp.MainActivity;
 import com.meeting.meetingapp.R;
+import com.meeting.meetingapp.SelectParticipants;
 import com.meeting.meetingapp.User;
 
 import java.util.ArrayList;
@@ -37,6 +41,8 @@ public class UsersChatAdapter extends RecyclerView.Adapter<UsersChatAdapter.View
     private Long mCurrentUserCreatedAt;
     private String mCurrentUserId;
     CheckBox check;
+
+
     ArrayList<String> selectedUsers = new ArrayList<String>();
 
     public UsersChatAdapter(Context context, List<User> fireChatUsers) {
@@ -146,17 +152,13 @@ public class UsersChatAdapter extends RecyclerView.Adapter<UsersChatAdapter.View
             return mStatusConnection;
         }
 
+
+
+
         @Override
         public void onClick(View view) {
 
-            User user = mUsers.get(getLayoutPosition());
-
-            String chatRef = user.createUniqueChatRef(mCurrentUserCreatedAt,mCurrentUserEmail);
-
-            Intent chatIntent = new Intent(mContextViewHolder, MainActivity.class);
-            chatIntent.putExtra(ExtraIntent.EXTRA_CURRENT_USER_ID, mCurrentUserId);
-            chatIntent.putExtra(ExtraIntent.EXTRA_RECIPIENT_ID, user.getRecipientId());
-            chatIntent.putExtra(ExtraIntent.EXTRA_CHAT_REF, chatRef);
+            Intent chatIntent = new Intent(mContextViewHolder, GraphTest.class);
 
             // Start new activity
             mContextViewHolder.startActivity(chatIntent);

@@ -16,7 +16,9 @@ public class ChatHelper {
 
     /*Generate an avatar randomly*/
     public static int  generateRandomAvatarForUser(){
-        return randomAvatarGenerator.nextInt(NUMBER_OF_AVATAR);
+        Random rand = new Random();
+        int rand_int1 = rand.nextInt(5);
+        return randomAvatarGenerator.nextInt(rand_int1);
     }
 
     /*Get avatar id*/

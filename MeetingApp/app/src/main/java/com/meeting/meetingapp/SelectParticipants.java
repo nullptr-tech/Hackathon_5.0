@@ -52,6 +52,7 @@ public class SelectParticipants extends AppCompatActivity {
     Button nextPageBtn;
     CheckBox check;
     TextView text;
+    String checkForParentChild;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +66,6 @@ public class SelectParticipants extends AppCompatActivity {
         check = (CheckBox) findViewById(R.id.checkBox2);
         nextPageBtn = (Button) findViewById(R.id.nextPage1);
 
-
         nextPageBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -76,7 +76,7 @@ public class SelectParticipants extends AppCompatActivity {
                     startActivity(nextBut);
                 }
             }
-        });
+    });
 
         setAuthInstance();
         setUsersDatabase();
@@ -225,20 +225,21 @@ public class SelectParticipants extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
                 if(dataSnapshot.exists()){
-
-                    String userUid = dataSnapshot.getKey();
-
-                    if(dataSnapshot.getKey().equals(mCurrentUserUid)){
-                        User currentUser = dataSnapshot.getValue(User.class);
-                        mUsersChatAdapter.setCurrentUserInfo(userUid, currentUser.getEmail(), currentUser.getCreatedAt());
-                    }else {
-                        User recipient = dataSnapshot.getValue(User.class);
-                        recipient.setRecipientId(userUid);
-                        mUsersKeyList.add(userUid);
-                        mUsersChatAdapter.refill(recipient);
-                    }
+                    User currentUser = dataSnapshot.getValue(User.class);
+                    boolean checker = currentUser.getParentOrChild();
+                    if (checker == false) {
+                            String userUid = dataSnapshot.getKey();
+                            if (dataSnapshot.getKey().equals(mCurrentUserUid)) {
+                                User currentUserTwo = dataSnapshot.getValue(User.class);
+                                mUsersChatAdapter.setCurrentUserInfo(userUid, currentUserTwo.getEmail(), currentUserTwo.getCreatedAt());
+                            } else {
+                                User recipient = dataSnapshot.getValue(User.class);
+                                recipient.setRecipientId(userUid);
+                                mUsersKeyList.add(userUid);
+                                mUsersChatAdapter.refill(recipient);
+                            }
+                        }
                 }
-
             }
 
             @Override
