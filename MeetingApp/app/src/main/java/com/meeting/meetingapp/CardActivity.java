@@ -12,14 +12,7 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,11 +22,7 @@ public class CardActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private DatabaseReference mUserRefDatabase;
-    private FirebaseDatabase database;
-    private DatabaseReference ref;
-
-
-    private TextView username,bb;
+    private TextView username;
     ViewPager viewPager;
     Adapter adapter;
     List<ModelClass> models;
@@ -48,38 +37,26 @@ public class CardActivity extends AppCompatActivity {
 
         models = new ArrayList<>();
         username = (TextView) findViewById(R.id.card_displayname);
-<<<<<<< Updated upstream
         CreateBtn = (Button) findViewById(R.id.createBtn);
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
-=======
-        bb = (TextView) findViewById(R.id.card_balance);
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-        database = FirebaseDatabase.getInstance();
-        ref = database.getReference();
-
-        ref = database.getReference();
-        ref.child("users").child(user.getUid()).addValueEventListener(new ValueEventListener() {
->>>>>>> Stashed changes
             @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                System.out.println("yousd abjkasd pasdfjnasd o");
-                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
-                    System.out.println("aaaaaaaaaaaaaaappppppppppppp " + postSnapshot);
-                    if(postSnapshot.getKey().equals("displayName")){
-                        username.setText(postSnapshot.getValue().toString());
-                    }
-                    if(postSnapshot.getKey().equals("startingBalance")){
-                        bb.setText(postSnapshot.getValue().toString());
-                    }
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+
+                if (user != null) {
+                    username.setText(user.getDisplayName().toUpperCase());
+                } else {
+                    // User is signed out
+                    Intent intent = new Intent(CardActivity.this, Login.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // LoginActivity is a New Task
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK); // The old task when coming back to this activity should be cleared so we cannot come back to it.
+                    startActivity(intent);
                 }
-                // System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaa ppppp : " +snapshot.getValue() + "\n");  //prints "Do you have data? You'll love Firebase."
             }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
+        };
+
         models.add(new ModelClass(R.drawable.city, "Chore 1", "Brochure is an informative paper document (often also used for advertising) that can be folded into a template"));
         models.add(new ModelClass(R.drawable.city, "Chore 2", "Sticker is a type of label: a piece of printed paper, plastic, vinyl, or other material with pressure sensitive adhesive on one side"));
         models.add(new ModelClass(R.drawable.city, "Chore 3", "Poster is any piece of printed paper designed to be attached to a wall or vertical surface."));
