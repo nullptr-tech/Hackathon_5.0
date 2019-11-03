@@ -51,6 +51,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         loginbck = (TextView)findViewById(R.id.backToLogin);
         isParentOrChildTest = (Switch)findViewById(R.id.isParentOrChild);
         isParentOrChild = (Switch)findViewById(R.id.isParentOrChild);
+
         startingBalance = (EditText) findViewById(R.id.startingbalance);
 
 
@@ -186,6 +187,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                 new Date().getTime(),
                 getParentOrChild(),
                 getStartingBalance()
+
         );
     }
     public String getDisplayName() {
