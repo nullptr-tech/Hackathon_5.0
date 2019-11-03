@@ -23,7 +23,6 @@ import java.util.HashMap;
 import java.util.List;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 
 public class CreateMeeting extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private Button btn;
