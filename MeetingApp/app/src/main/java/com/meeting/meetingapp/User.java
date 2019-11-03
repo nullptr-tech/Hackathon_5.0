@@ -21,15 +21,19 @@ public class User {
     }
 
     public User(String displayName, String email, String connection, int avatarId, long createdAt, boolean parentOrChild) {
-    public User(String displayName, String email, String connection, int avatarId, long createdAt, boolean isParentOrChild,  double startingBalance) {
+    public User(String displayName, String email, String connection, int avatarId, long createdAt, boolean parentOrChild,  double startingBalance) {
+
         this.displayName = displayName;
         this.email = email;
         this.connection = connection;
         this.avatarId = avatarId;
         this.createdAt = createdAt;
+
         this.parentOrChild = parentOrChild;
-        this.isParentOrChild = isParentOrChild;
+
+
         this.startingBalance = startingBalance;
+
     }
 
 
