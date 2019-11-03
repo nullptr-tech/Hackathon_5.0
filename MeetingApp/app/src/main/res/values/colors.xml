@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#93cc29</color>
-    <color name="colorPrimaryDark">#93cc29</color>
-    <color name="colorAccent">#AADB50</color>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#000000</color>
     <color name="greyblue">#7295A6</color>
     <color name="colorYello">#FFCE54</color>
     <color name="colorBettersweet1">#FC6E51</color>
@@ -34,5 +34,5 @@
     <color name="sky2">#5DDCD2</color>
     <color name="sky">#3bafda</color>
     <color name="skyDark">#1A90A0</color>
-    <color name="orange_lite">#FD757C</color>
+    <color name="orange_lite">#616161</color>
 </resources>

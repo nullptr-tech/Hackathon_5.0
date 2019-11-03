@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity{
     Meeting meeting;
     Button createMeeting;
     ArrayList<String> listOfKeys;
-    Object checkForParentChild;
+    String checkForParentChild;
     @Override
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
@@ -213,6 +213,16 @@ public class MainActivity extends AppCompatActivity{
                 }
                 for (DataSnapshot ds : dataSnapshot.child("users").getChildren()){
                     checkForParentChild = ds.child("parentOrChild").getValue().toString();
+                    String search = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                    if (search.equals(ds.getKey())) {
+                        break;
+                    }
+                }
+                if(checkForParentChild.equals("false")){
+                    createMeeting.setVisibility(View.INVISIBLE);
+                }
+                else {
+                    createMeeting.setVisibility(View.VISIBLE);
                 }
                 listView.setAdapter(adapter);
             }
@@ -231,12 +241,6 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-        if(checkForParentChild == "false"){
-            createMeeting.setVisibility(View.INVISIBLE);
-        }
-        else {
-            createMeeting.setVisibility(View.VISIBLE);
-        }
         createMeeting.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){

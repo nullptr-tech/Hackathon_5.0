@@ -1,6 +1,7 @@
 package com.meeting.meetingapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -67,7 +68,8 @@ public class CreateMeeting extends AppCompatActivity implements AdapterView.OnIt
         // Spinner element
        // Spinner spinner = (Spinner) findViewById(R.id.roomSpin);
 
-
+        title.setTextColor(Color.WHITE);
+        description.setTextColor(Color.WHITE);
         // Spinner Drop down elements
         categories = new ArrayList<String>();
         categories.add("A1");
