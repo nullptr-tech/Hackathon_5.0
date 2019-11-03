@@ -11,16 +11,19 @@ public class User {
     private String connection;
     private int avatarId;
     private long createdAt;
+
     private boolean parentOrChild;
+
     private boolean isParentOrChild = false;
     public double startingBalance;
+
+
 
     private String mRecipientId;
 
     public User() {
     }
 
-    public User(String displayName, String email, String connection, int avatarId, long createdAt, boolean parentOrChild) {
     public User(String displayName, String email, String connection, int avatarId, long createdAt, boolean parentOrChild,  double startingBalance) {
 
         this.displayName = displayName;

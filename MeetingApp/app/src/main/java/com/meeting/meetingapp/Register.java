@@ -49,8 +49,8 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         name = (EditText)findViewById(R.id.regname);
         register = (Button)findViewById(R.id.regHere);
         loginbck = (TextView)findViewById(R.id.backToLogin);
+
         isParentOrChildTest = (Switch)findViewById(R.id.isParentOrChild);
-        isParentOrChild = (Switch)findViewById(R.id.isParentOrChild);
 
         startingBalance = (EditText) findViewById(R.id.startingbalance);
 
