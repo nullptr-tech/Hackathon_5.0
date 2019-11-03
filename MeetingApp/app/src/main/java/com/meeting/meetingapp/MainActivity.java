@@ -242,8 +242,6 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-<<<<<<< Updated upstream
-=======
         if(checkForParentChild.equals("false")){
             createMeeting.setVisibility(View.INVISIBLE);
             graphB.setVisibility(View.INVISIBLE);
@@ -252,7 +250,7 @@ public class MainActivity extends AppCompatActivity{
             createMeeting.setVisibility(View.VISIBLE);
             graphB.setVisibility(View.VISIBLE);
         }
->>>>>>> Stashed changes
+
         createMeeting.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
