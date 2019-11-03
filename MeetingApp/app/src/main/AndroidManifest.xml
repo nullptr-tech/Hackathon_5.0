@@ -12,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< Updated upstream
         <activity android:name=".GraphTest"></activity>
+=======
+        <activity android:name=".BankScreen"></activity>
+>>>>>>> Stashed changes
         <activity
             android:name=".Splash"
             android:theme="@style/SplashTheme">
