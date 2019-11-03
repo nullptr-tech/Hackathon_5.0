@@ -6,6 +6,8 @@ import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,6 +27,7 @@ public class CardActivity extends AppCompatActivity {
     Adapter adapter;
     List<ModelClass> models;
     Integer[] colors = null;
+    Button CreateBtn;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
 
     @Override
@@ -34,6 +37,7 @@ public class CardActivity extends AppCompatActivity {
 
         models = new ArrayList<>();
         username = (TextView) findViewById(R.id.card_displayname);
+        CreateBtn = (Button) findViewById(R.id.createBtn);
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -69,13 +73,23 @@ public class CardActivity extends AppCompatActivity {
         viewPager.setPadding(130, 0, 130, 0);
 
         Integer[] colors_temp = {
-                getResources().getColor(R.color.color1),
-                getResources().getColor(R.color.color1),
-                getResources().getColor(R.color.color1),
-                getResources().getColor(R.color.color1)
+              //  getResources().getColor(R.color.color1),
+              //  getResources().getColor(R.color.color1),
+              //  getResources().getColor(R.color.color1),
+               // getResources().getColor(R.color.color1)
         };
 
         colors = colors_temp;
 
+        CreateBtn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (v==CreateBtn){
+                    Intent nextBut = new Intent(CardActivity.this, SelectParticipants.class);
+                    startActivity(nextBut);
+                }
+            }
+        });
     }
 }
