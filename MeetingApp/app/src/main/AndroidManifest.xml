@@ -12,11 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< Updated upstream
         <activity android:name=".GraphTest"></activity>
-=======
-        <activity android:name=".BankScreen"></activity>
->>>>>>> Stashed changes
         <activity
             android:name=".Splash"
             android:theme="@style/SplashTheme">
@@ -26,6 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".BankScreen"/>
         <activity android:name=".MainActivity" />
         <activity android:name=".SetPrefDates" />
         <activity android:name=".SetExclDates" />
