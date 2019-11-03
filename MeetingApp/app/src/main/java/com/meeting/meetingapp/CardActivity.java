@@ -1,16 +1,26 @@
 package com.meeting.meetingapp;
 
 import android.animation.ArgbEvaluator;
+import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CardActivity extends AppCompatActivity {
 
-
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    private DatabaseReference mUserRefDatabase;
+    private TextView username;
     ViewPager viewPager;
     Adapter adapter;
     List<ModelClass> models;
@@ -23,6 +33,25 @@ public class CardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_card);
 
         models = new ArrayList<>();
+        username = (TextView) findViewById(R.id.card_displayname);
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+
+                if (user != null) {
+                    username.setText(user.getDisplayName().toUpperCase());
+                } else {
+                    // User is signed out
+                    Intent intent = new Intent(CardActivity.this, Login.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // LoginActivity is a New Task
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK); // The old task when coming back to this activity should be cleared so we cannot come back to it.
+                    startActivity(intent);
+                }
+            }
+        };
 
         models.add(new ModelClass(R.drawable.city, "Chore 1", "Brochure is an informative paper document (often also used for advertising) that can be folded into a template"));
         models.add(new ModelClass(R.drawable.city, "Chore 2", "Sticker is a type of label: a piece of printed paper, plastic, vinyl, or other material with pressure sensitive adhesive on one side"));

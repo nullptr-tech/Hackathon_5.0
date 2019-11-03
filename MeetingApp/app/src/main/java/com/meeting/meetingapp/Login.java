@@ -51,7 +51,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (mUser!=null){
-                    Intent intent = new Intent(Login.this,MainActivity.class);
+                    Intent intent = new Intent(Login.this,CardActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }else {
@@ -101,7 +101,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             Toast.makeText(Login.this,"Passwor must be greater then 6 digit",Toast.LENGTH_SHORT).show();
             return;
         }
-        mDialog.setMessage("loging please wait...");
+        mDialog.setMessage("logging please wait...");
         mDialog.setCanceledOnTouchOutside(false);
         mDialog.show();
         mAuth.signInWithEmailAndPassword(Email, Password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -131,7 +131,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
 
     private void goToMainActivity() {
-        Intent intent = new Intent(Login.this, MainActivity.class);
+        Intent intent = new Intent(Login.this, CardActivity.class);
         //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);

@@ -63,7 +63,6 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_main);
 
-
         meeting = new Meeting();
 
         createMeeting = (Button) findViewById(R.id.create_Meeting);

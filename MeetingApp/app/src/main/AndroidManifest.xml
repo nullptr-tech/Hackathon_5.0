@@ -39,7 +39,6 @@
         <activity android:name=".Login" />
         <activity android:name=".CreateMeeting" />
         <activity android:name=".MeetingScreen" />
-        <activity android:name=".GraphTest"/>
         <activity android:name=".CheckConflicts" />
         <activity android:name=".Edit" />
         <activity android:name=".UserPrefExcl" />
