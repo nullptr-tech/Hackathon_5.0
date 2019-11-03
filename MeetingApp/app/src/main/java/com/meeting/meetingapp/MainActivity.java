@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity{
     ArrayList<String> list;
     ArrayAdapter<String> adapter;
     Meeting meeting;
-    Button createMeeting;
     Button createMeeting, graphB;
     ArrayList<String> listOfKeys;
     String checkForParentChild;
