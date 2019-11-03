@@ -221,10 +221,13 @@ public class MainActivity extends AppCompatActivity{
                 }
                 if(checkForParentChild.equals("false")){
                     createMeeting.setVisibility(View.INVISIBLE);
+                    graphB.setVisibility(View.INVISIBLE);
                 }
                 else {
                     createMeeting.setVisibility(View.VISIBLE);
+                    graphB.setVisibility(View.VISIBLE);
                 }
+
                 listView.setAdapter(adapter);
             }
 
@@ -241,15 +244,6 @@ public class MainActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
-
-        if(checkForParentChild.equals("false")){
-            createMeeting.setVisibility(View.INVISIBLE);
-            graphB.setVisibility(View.INVISIBLE);
-        }
-        else {
-            createMeeting.setVisibility(View.VISIBLE);
-            graphB.setVisibility(View.VISIBLE);
-        }
 
         createMeeting.setOnClickListener(new View.OnClickListener(){
             @Override
