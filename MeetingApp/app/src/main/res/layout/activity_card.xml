@@ -130,7 +130,8 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/bginfo"
-        android:text="Create" />
+        android:text="Create"
+        android:textColor="@color/colorWhite" />
 
 
     <Button
@@ -142,6 +143,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="69dp"
         android:background="@drawable/bginfo"
-        android:text="Buy" />
+        android:text="Buy"
+        android:textColor="@color/colorWhite" />
 
 </RelativeLayout>
