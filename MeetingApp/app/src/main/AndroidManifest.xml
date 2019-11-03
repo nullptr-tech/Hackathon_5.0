@@ -12,10 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".CardActivity">
-
-        </activity>
+        <activity android:name=".Activity_buy"></activity>
+        <activity android:name=".CardActivity"></activity>
         <activity android:name=".GraphTest" />
         <activity
             android:name=".Splash"
@@ -26,9 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BankScreen">
-
-        </activity>
+        <activity android:name=".BankScreen"></activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".SetPrefDates" />
         <activity android:name=".SetExclDates" />
