@@ -35,8 +35,11 @@
     </navigator>
     <panes>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <pane id="AndroidView">
 =======
+=======
+>>>>>>> Stashed changes
       <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
@@ -71,12 +74,21 @@
               <item name="MeetingApp" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Hackathon_5.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Hackathon_5.0" type="462c0819:PsiDirectoryNode" />
+              <item name="MeetingApp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <pane id="Scope" />
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     </panes>
@@ -134,10 +146,13 @@
   </component>
   <component name="ToolWindowManager">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25100672" />
 =======
+=======
+>>>>>>> Stashed changes
     <frame x="0" y="17" width="1536" height="784" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24949966" />
@@ -150,7 +165,10 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Resources Explorer" order="7" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <window_info id="Build Variants" order="8" side_tool="true" />
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       <window_info anchor="bottom" id="Message" order="0" />
