@@ -12,13 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< Updated upstream
-=======
+
         <activity android:name=".CardActivity">
 
         </activity>
         <activity android:name=".GraphTest" />
->>>>>>> Stashed changes
         <activity
             android:name=".Splash"
             android:theme="@style/SplashTheme">
@@ -39,7 +37,6 @@
         <activity android:name=".Login" />
         <activity android:name=".CreateMeeting" />
         <activity android:name=".MeetingScreen" />
-        <activity android:name=".GraphTest"/>
         <activity android:name=".CheckConflicts" />
         <activity android:name=".Edit" />
         <activity android:name=".UserPrefExcl" />
