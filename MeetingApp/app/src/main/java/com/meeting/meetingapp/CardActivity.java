@@ -28,6 +28,8 @@ public class CardActivity extends AppCompatActivity {
     List<ModelClass> models;
     Integer[] colors = null;
     Button CreateBtn;
+    Button BuyBtn;
+
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
 
     @Override
@@ -37,8 +39,10 @@ public class CardActivity extends AppCompatActivity {
 
         models = new ArrayList<>();
         username = (TextView) findViewById(R.id.card_displayname);
-        CreateBtn = (Button) findViewById(R.id.createBtn);
+        CreateBtn = (Button) findViewById(R.id.createBtn3);
         mAuth = FirebaseAuth.getInstance();
+        BuyBtn = (Button) findViewById(R.id.buyBtn);
+
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -91,5 +95,15 @@ public class CardActivity extends AppCompatActivity {
                 }
             }
         });
+//        BuyBtn.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                if (v==BuyBtn){
+//                    Intent nextBut = new Intent(CardActivity.this, Activity_buy.class);
+//                    startActivity(nextBut);
+//                }
+//            }
+//        });
     }
 }
