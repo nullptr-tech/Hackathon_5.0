@@ -15,8 +15,6 @@
         android:layout_centerHorizontal="true"
         app:srcCompat="@drawable/city"
         android:layout_marginBottom="50dp"/>
-
-
         android:src="@mipmap/ic_launcher" />
 
     <TextView
@@ -84,6 +82,15 @@
             android:layout_alignEnd="@+id/login_password"
             android:layout_alignRight="@+id/login_password"
             android:layout_marginTop="18dp" />
+
+        <Button
+            android:id="@+id/graphButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="300dp"
+            android:text="graph"
+            android:textAlignment="center" />
 
     </RelativeLayout>
 
