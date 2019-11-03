@@ -28,7 +28,7 @@ import java.util.Date;
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
 
-    EditText email,password,name;
+    EditText email,password,name, startingBalance;
     Button register;
     TextView loginbck;
     Switch isParentOrChildTest;
@@ -37,6 +37,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     FirebaseAuth mAuth;
     ProgressDialog mDialog;
     DatabaseReference databaseReference;
+    double StartingBalance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +49,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         name = (EditText)findViewById(R.id.regname);
         register = (Button)findViewById(R.id.regHere);
         loginbck = (TextView)findViewById(R.id.backToLogin);
+
         isParentOrChildTest = (Switch)findViewById(R.id.isParentOrChild);
+
+        startingBalance = (EditText) findViewById(R.id.startingbalance);
 
 
 
@@ -72,6 +76,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private void Signup() {
         Name = name.getText().toString().trim();
         Email = email.getText().toString().trim();
+        StartingBalance = Double.parseDouble(startingBalance.getText().toString().trim());
         boolean parentOrChildStatus;
 
         if (isParentOrChildTest.isChecked())
@@ -95,6 +100,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
             Toast.makeText(Register.this,"Passwor must be greater then 6 digit",Toast.LENGTH_SHORT).show();
             return;
         }
+
         mDialog.setMessage("Creating User please wait...");
         mDialog.setCanceledOnTouchOutside(false);
         mDialog.show();
@@ -104,7 +110,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                 if (task.isSuccessful()){
                     sendEmailVerification();
                     mDialog.dismiss();
-                    OnAuth(task.getResult().getUser());
+                    OnAuth(task.getResult().getUser(), Double.parseDouble(startingBalance.getText().toString()));
                     mAuth.signOut();
                 }else{
                     Toast.makeText(Register.this,"error on creating user",Toast.LENGTH_SHORT).show();
@@ -128,8 +134,8 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         }
     }
 
-    private void OnAuth(FirebaseUser user) {
-        createNewUser(user.getUid());
+    private void OnAuth(FirebaseUser user, double startingBalance) {
+        createNewUser(user.getUid(), startingBalance);
         goToMainActivity();
     }
 
@@ -140,9 +146,36 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         startActivity(intent);
     }
 
-    private void createNewUser(String userId){
+    private void createNewUser(String userId, double startingBalance){
         User user = buildNewUser();
         databaseReference.child("users").child(userId).setValue(user);
+
+        String key = databaseReference.child("users").child(userId).child("balance").push().getKey();
+        databaseReference.child("users").child(userId).child("balance").child("Monday").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("Tuesday").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("Wednesday").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("Thursday").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("Friday").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("Saturday").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("Sunday").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("CurrentBalance").setValue(startingBalance);
+
+
+        databaseReference.child("users").child(userId).child("balance").child("Monday").child("MoneyOut").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("Monday").child("MoneyIn").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("Tuesday").child("MoneyOut").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("Tuesday").child("MoneyIn").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("Wednesday").child("MoneyOut").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("Wednesday").child("MoneyIn").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("Thursday").child("MoneyOut").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("Thursday").child("MoneyIn").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("Friday").child("MoneyOut").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("Friday").child("MoneyIn").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("Saturday").child("MoneyOut").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("Saturday").child("MoneyIn").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("Sunday").child("MoneyOut").setValue("");
+        databaseReference.child("users").child(userId).child("balance").child("Sunday").child("MoneyIn").setValue("");
+
     }
 
     private User buildNewUser() {
@@ -152,7 +185,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                 UsersChatAdapter.ONLINE,
                 ChatHelper.generateRandomAvatarForUser(),
                 new Date().getTime(),
-                getParentOrChild()
+                getParentOrChild(),
+                getStartingBalance()
+
         );
     }
     public String getDisplayName() {
@@ -166,4 +201,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     public boolean getParentOrChild(){
         return IsParentOrChild;
     }
+
+    public Double getStartingBalance(){ return StartingBalance; }
+
 }

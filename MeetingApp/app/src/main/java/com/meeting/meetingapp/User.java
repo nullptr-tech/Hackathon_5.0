@@ -11,20 +11,32 @@ public class User {
     private String connection;
     private int avatarId;
     private long createdAt;
+
     private boolean parentOrChild;
+
+    private boolean isParentOrChild = false;
+    public double startingBalance;
+
+
 
     private String mRecipientId;
 
     public User() {
     }
 
-    public User(String displayName, String email, String connection, int avatarId, long createdAt, boolean parentOrChild) {
+    public User(String displayName, String email, String connection, int avatarId, long createdAt, boolean parentOrChild,  double startingBalance) {
+
         this.displayName = displayName;
         this.email = email;
         this.connection = connection;
         this.avatarId = avatarId;
         this.createdAt = createdAt;
+
         this.parentOrChild = parentOrChild;
+
+
+        this.startingBalance = startingBalance;
+
     }
 
 
@@ -79,5 +91,9 @@ public class User {
 
     public void setRecipientId(String recipientId) {
         this.mRecipientId = recipientId;
+    }
+
+    public double getStartingBalance() {
+        return startingBalance;
     }
 }

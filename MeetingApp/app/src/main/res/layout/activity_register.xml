@@ -75,11 +75,25 @@
         android:ems="10"
         android:text="Are you a parent?" />
 
+    <EditText
+        android:id="@+id/startingbalance"
+        android:hint="Starting Balance"
+        android:padding="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="30dp"
+        android:layout_width="365dp"
+        android:background="@drawable/background"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:text="" />
+
     <Button
         android:id="@+id/regHere"
         style="@style/FirebaseUI.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:background="#ec3"
         android:text="Register here"
         android:textColor="#fff" />
@@ -92,4 +106,5 @@
         android:layout_marginRight="100dp"
         android:padding="30dp"
         android:text="login" />
+
 </LinearLayout>
