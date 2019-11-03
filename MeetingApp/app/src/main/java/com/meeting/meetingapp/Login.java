@@ -24,7 +24,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;
     EditText email,password;
-    Button login,register, graphB;
+    Button login,register;
     String Email,Password;
     ProgressDialog mDialog;
     FirebaseUser mUser;
@@ -40,11 +40,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         password = (EditText)findViewById(R.id.login_password);
         login = (Button)findViewById(R.id.login_here);
         register = (Button)findViewById(R.id.register_here);
-        graphB = (Button)findViewById(R.id.graphButton);
         setAuthInstance();
         login.setOnClickListener(this);
         register.setOnClickListener(this);
-        graphB.setOnClickListener(this);
         mDialog = new ProgressDialog(this);
         mUser = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -87,9 +85,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             onLogInUser();
         }else if (v==register){
             goToRegisterActivity();
-        } else if (v==graphB){
-            Intent intent = new Intent(Login.this, GraphTest.class);
-            startActivity(intent);
         }
     }
     private void onLogInUser() {
