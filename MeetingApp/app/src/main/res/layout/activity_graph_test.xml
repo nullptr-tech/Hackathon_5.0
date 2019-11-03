@@ -28,19 +28,45 @@
 
         </org.eazegraph.lib.charts.ValueLineChart>
 
-        <TextView
-            android:id="@+id/aiPredictionTxt"
-            android:layout_width="317dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/bginfo"
-            android:paddingTop="140dp"
-            android:paddingBottom="140dp"
-            android:text="AI predicts ..."
-            android:textAlignment="center"
-            android:textColor="@color/colorWhite"
-            android:textSize="20sp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/aiPredictionTxt"
+                android:layout_width="317dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/bginfo"
+                android:paddingTop="40dp"
+                android:paddingBottom="240dp"
+                android:text="Your performance:"
+                android:textAlignment="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/piggie1"
+                android:layout_width="94dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                app:srcCompat="@drawable/pig_reward" />
+
+            <ImageView
+                android:id="@+id/piggie2"
+                android:layout_width="94dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="145dp"
+                app:srcCompat="@drawable/pig_reward" />
+
+            <ImageView
+                android:id="@+id/piggie3"
+                android:layout_width="94dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="245dp"
+                app:srcCompat="@drawable/pig_reward" />
+        </RelativeLayout>
 
 
     </LinearLayout>
