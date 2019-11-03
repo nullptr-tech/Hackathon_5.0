@@ -20,18 +20,15 @@ public class GraphTest extends AppCompatActivity {
         ValueLineSeries series = new ValueLineSeries();
         series.setColor(0xFF56B7F1);
 
-        series.addPoint(new ValueLinePoint("Jan", 2.4f));
-        series.addPoint(new ValueLinePoint("Feb", 3.4f));
-        series.addPoint(new ValueLinePoint("Mar", .4f));
-        series.addPoint(new ValueLinePoint("Apr", 1.2f));
-        series.addPoint(new ValueLinePoint("Mai", 2.6f));
-        series.addPoint(new ValueLinePoint("Jun", 1.0f));
-        series.addPoint(new ValueLinePoint("Jul", 3.5f));
-        series.addPoint(new ValueLinePoint("Aug", 2.4f));
-        series.addPoint(new ValueLinePoint("Sep", 2.4f));
-        series.addPoint(new ValueLinePoint("Oct", 3.4f));
-        series.addPoint(new ValueLinePoint("Nov", .4f));
-        series.addPoint(new ValueLinePoint("Dec", 1.3f));
+        series.addPoint(new ValueLinePoint("Mon", 0.0f));
+        series.addPoint(new ValueLinePoint("Tue", 3.4f));
+        series.addPoint(new ValueLinePoint("Wed", .4f));
+        series.addPoint(new ValueLinePoint("Thur", 1.2f));
+        series.addPoint(new ValueLinePoint("Fri", 2.6f));
+        series.addPoint(new ValueLinePoint("Sat", 1.0f));
+        series.addPoint(new ValueLinePoint("Sun", 3.5f));
+
+
 
         mCubicValueLineChart.addSeries(series);
         mCubicValueLineChart.startAnimation();

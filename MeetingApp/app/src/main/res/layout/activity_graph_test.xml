@@ -13,17 +13,34 @@
 
         <org.eazegraph.lib.charts.ValueLineChart
             android:id="@+id/cubiclinechart"
-            android:layout_width="match_parent"
+            android:layout_width="321dp"
             android:layout_height="200dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="100dp"
             app:egCurveSmoothness="0.4"
-            app:egIndicatorLineColor="#FE6DA8"
+            app:egIndicatorLineColor="#351CA8"
+            app:egIndicatorShadowColor="#351CA8"
+            app:egIndicatorTextColor="#351CA8"
             app:egLegendHeight="40dp"
             app:egShowStandardValue="true"
             app:egUseCubic="true"
-            app:egUseOverlapFill="true">
+            app:egUseOverlapFill="false">
 
         </org.eazegraph.lib.charts.ValueLineChart>
 
+        <TextView
+            android:id="@+id/aiPredictionTxt"
+            android:layout_width="317dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/bginfo"
+            android:paddingTop="140dp"
+            android:paddingBottom="140dp"
+            android:text="AI predicts ..."
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp" />
 
 
     </LinearLayout>
