@@ -12,8 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< Updated upstream
+=======
         <activity android:name=".Activity_buy"></activity>
         <activity android:name=".GraphTest" />
+>>>>>>> Stashed changes
         <activity
             android:name=".Splash"
             android:theme="@style/SplashTheme">

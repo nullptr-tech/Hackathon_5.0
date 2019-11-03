@@ -22,20 +22,25 @@
     <option name="y" value="108" />
     <option name="width" value="978" />
     <option name="height" value="1053" />
+=======
   <component name="ProjectFrameBounds">
     <option name="y" value="21" />
     <option name="width" value="1920" />
     <option name="height" value="980" />
+>>>>>>> Stashed changes
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< Updated upstream
       <pane id="AndroidView">
+=======
       <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
+>>>>>>> Stashed changes
         <subPane>
           <expand>
             <path>
@@ -64,7 +69,10 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< Updated upstream
       <pane id="Scope" />
+=======
+>>>>>>> Stashed changes
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -119,12 +127,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< Updated upstream
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25100672" />
+=======
     <frame x="0" y="17" width="1536" height="784" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24949966" />
+>>>>>>> Stashed changes
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Captures" order="2" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="3" />
@@ -132,7 +143,10 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Resources Explorer" order="7" />
+<<<<<<< Updated upstream
       <window_info id="Build Variants" order="8" side_tool="true" />
+=======
+>>>>>>> Stashed changes
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
