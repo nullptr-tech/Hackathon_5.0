@@ -36,8 +36,8 @@ public class GraphTest extends AppCompatActivity {
         ValueLineSeries series = new ValueLineSeries();
         series.setColor(0xFF56B7F1);
 
-        double moneyIn = 10.2 + 3.0+ 12.54 + 34.2;
-        double moneyOut = 31.2 + 23 + 12.54 + 10.2;
+        double moneyIn = 10.2;
+        double moneyOut = 10.2;
         if ( moneyIn < moneyOut){
             pig1.setVisibility(View.VISIBLE);
         }else if(moneyIn > moneyOut){
